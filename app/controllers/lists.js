@@ -9,14 +9,10 @@ module.exports = () => {
         items: []
       })
       newList.save((err) => {
-        if (err) {
-          throw err
-        }
+        if (err) { throw err }
       })
     },
     addListItem: (listID, listItem, callback) => {
-      const newItems = []
-      newItems.push(listItem)
       LIST.findByIdAndUpdate(listID,
         { $push: { "items": listItem } },
         { new: true },
@@ -24,6 +20,13 @@ module.exports = () => {
           if (err) { throw err }
           callback(doc)
         })
-    }
+    },
+    // completeListItem: (listID, listItemID, callback) => {
+    //   LIST.findOneAndUpdate(
+    //     { _id: listID, items: { $elemMatch: { _id: listItemID } } },
+    //     {}
+    //     { new: true }
+    //   )
+    // }
   }
 }
