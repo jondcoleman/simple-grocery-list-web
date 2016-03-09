@@ -48,9 +48,7 @@ gulp.task('clean', cb => {
 
 gulp.task('browserSync', () => {
   browserSync({
-    server: {
-      baseDir: './'
-    }
+    proxy: 'http://localhost:3000'
   })
 })
 

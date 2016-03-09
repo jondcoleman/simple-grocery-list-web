@@ -20,7 +20,7 @@ export default React.createClass({
         <header>
           <h1>React Starterify {version}</h1>
           <Link to="/about">About</Link>
-          <Link to="/poweredby">Powered by</Link>
+          <Link to="/poweredby">Powered by Reacting</Link>
         </header>
         <section>
           {this.props.children || 'Welcome to React Starterify'}
